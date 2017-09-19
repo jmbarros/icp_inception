@@ -31,8 +31,6 @@ def git ( url ):
    os.system(gt)
    return;
 
-def p
-
  ############
 yum_install("epel-release")
 yum_install( "ansible" )
