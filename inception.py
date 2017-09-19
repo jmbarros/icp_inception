@@ -31,6 +31,7 @@ def git ( url ):
    os.system(gt)
    return;
 
+def p
 
  ############
 yum_install("epel-release")
@@ -38,3 +39,4 @@ yum_install( "ansible" )
 yum_install( "git" )
 git("https://github.com/jmbarros/icp_inception.git")
 install_galaxy( "jmbarros.icp" )
+pb ( "icp_inception/inception.yml")
