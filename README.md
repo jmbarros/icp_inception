@@ -1,4 +1,4 @@
-## Deploy a Kubernetes environment in SoftLayer with a single command! It's that simple.
+## Deploy an IBM Cloud private environment in SoftLayer or VMWare with a single command! It's that simple.
 
 ### Prerequisites:
 1. PIP - `sudo apt-get install python-pip python-dev build-essential`
