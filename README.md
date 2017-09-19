@@ -6,10 +6,9 @@
 
 
 ### Deployment:
-Follow this procedure:
+Just run this command, at your linux, to install the inception server:
 
 curl -l https://raw.githubusercontent.com/jmbarros/icp_inception/master/inception.py | /usr/bin/python
-
 
 Simple, no?
 
