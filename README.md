@@ -1,6 +1,9 @@
-## Deploy an IBM Cloud private environment in SoftLayer or VMWare with a single command! It's that simple.
+## Verify the pre-reqs for an IBM Cloud private installation
 
 ### Prerequisites:
+
+This procedure requires you to have one computer with the following software:
+
 1. Centos 7
 2. Python
 
@@ -8,7 +11,9 @@
 ### Deployment:
 Just run this command, at your linux, to install the inception server:
 
+```
 curl -l https://raw.githubusercontent.com/jmbarros/icp_inception/master/inception.py | /usr/bin/python
+```
 
 Simple, no?
 
