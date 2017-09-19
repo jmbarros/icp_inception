@@ -61,9 +61,3 @@
       docker_image:
         name: ibmcom/cfc-installer:2.1.0-beta-1
       delegate_to: localhost
-
- 
-    - name: Rebooting Host  
-      command: /usr/bin/systemd-run --on-active=1 /usr/bin/systemctl reboot
-      async: 0
-      poll: 0
