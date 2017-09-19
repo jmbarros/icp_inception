@@ -25,10 +25,10 @@ def install_galaxy ( galaxy ):
    os.system(ig)
    return;
 
-def git ( url )
-   " using curl"
+def git ( url ):
+   " using git"
    gt = "git clone " + url
-   os.system(curl)
+   os.system(gt)
    return;
 
 
@@ -36,5 +36,5 @@ def git ( url )
 yum_install("epel-release")
 yum_install( "ansible" )
 yum_install( "git" )
-command("https://github.com/jmbarros/icp_inception.git")
+git("https://github.com/jmbarros/icp_inception.git")
 install_galaxy( "jmbarros.icp" )
