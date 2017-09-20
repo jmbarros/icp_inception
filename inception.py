@@ -31,6 +31,12 @@ def git ( url ):
    os.system(gt)
    return;
 
+def copy ( ori, dest ):
+   " coping file "
+   pw = "cp " + ori + " " + dest
+   os.system(pw)
+   return;
+
  ############
 yum_install("epel-release")
 yum_install( "ansible" )
