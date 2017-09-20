@@ -17,6 +17,11 @@ curl -l https://raw.githubusercontent.com/jmbarros/icp_inception/master/inceptio
 
 Simple, no?
 
+## Automation Process 
+
+Inline-style: 
+![alt text](https://github.com/jmbarros/icp_inception/blob/master/images/coe-icp.png "Automation Model")
+
 ## Testing the environment
 
 We recommend running the Guestbook application to test your environment.
