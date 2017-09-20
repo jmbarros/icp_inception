@@ -1,15 +1,8 @@
 [master]
-master02 ansible_ssh_host=XXXX
+master01 ansible_ssh_host=xxxxx ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass="xxxxx"
 
 [worker]
-worker02 ansible_ssh_host=XXX
+worker01 ansible_ssh_host=xxxxx ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass="xxxx"
 
 [proxy]
-proxy02 ansible_ssh_host=XXXX
-
-
-
-[icp:vars]
-ansible_ssh_user=root 
-ansible_ssh_port=22 
-ansible_ssh_pass="xxx"
+proxy01 ansible_ssh_host=xxxxx ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass="xxxx"
