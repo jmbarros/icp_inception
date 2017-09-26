@@ -12,15 +12,15 @@ This procedure requires you to have one computer with the following software:
 Just run this command, at your linux, to install the inception server:
 
 ```
-curl -l https://raw.githubusercontent.com/jmbarros/icp_inception/master/inception.py | /usr/bin/python
+curl -l https://raw.github.ibm.com/COE-LA/klon/master/inception.py?token=AACETZgcdMUlsVUwU__ElZGj0RrDfqUdks5Z0n8KwA%3D%3D | /usr/bin/python
 ```
 
 Simple, no?
 
 ## Automation Process 
 
-Inline-style: 
-![alt text](https://github.com/jmbarros/icp_inception/blob/master/images/coe-icp.png "Automation Model")
+Automation Process: 
+![alt text](https://github.ibm.com/COE-LA/documentation/blob/master/images/coe-icp.png "Automation Model")
 
 ## Testing the environment
 

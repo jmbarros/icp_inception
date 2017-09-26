@@ -1,0 +1,20 @@
+---
+- name: reating Bluemix Server
+  hosts: localhost
+  tasks:
+  - name: Creating the server 
+    sl_vm:
+      hostname: "{{ item }}"
+      domain: "icp.local"
+      datacenter: "sao01"
+      tags: "icp"
+      hourly: True
+      private: False
+      dedicated: False
+      local_disk: True
+      cpus: "2"
+      memory: "8196"
+      disks: "25"
+      os_code: "CENTOS_LATEST_64"
+      wait: true
+    with_lines: inventory

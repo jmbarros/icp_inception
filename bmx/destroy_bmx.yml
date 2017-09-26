@@ -1,0 +1,8 @@
+- name: Cancel instances
+  hosts: localhost
+  gather_facts: False
+  tasks:
+  - name: Destroying servers...
+    sl_vm:
+      state: absent
+      hostname: "{{ inventory_hostname }}"
