@@ -20,9 +20,9 @@
       - device-mapper-persistent-data 
       - lvm2
 
-#    - name: Installing PIP
-#      command: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-#      ignore_errors: True
+    - name: Installing Docker CE Repo
+      command: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+      ignore_errors: True
 
 #    - name: Update pip
 #      command: pip install --upgrade pip
