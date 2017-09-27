@@ -21,7 +21,7 @@ def play_book ( pb ):
 
 def pip ( pp ):
    "run playbook"
-   pcom = "pip install" + pp
+   pcom = "pip install " + pp
    os.system(pcom)
    return;
 
