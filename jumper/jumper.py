@@ -46,10 +46,11 @@ def copy ( ori, dest ):
  ############
 yum_install("epel-release")
 yum_install("python2-pip")
+yum_install("python-urllib3") 
 yum_install( "ansible" )
 yum_install( "git" )
 pip( "--upgrade pip")
-yum_install("python-urllib3") 
+pip( "requests")
 pip( "softlayer" )
 git("https://github.com/jmbarros/klon.git")
 install_galaxy( "jmbarros.icp" )
