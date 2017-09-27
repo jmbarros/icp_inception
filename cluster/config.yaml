@@ -1,0 +1,39 @@
+# Licensed Materials - Property of IBM
+# IBM Cloud private
+# @ Copyright IBM Corp. 2017 All Rights Reserved
+# US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+---
+
+# Network in IPv4 CIDR format
+network_cidr: 10.1.0.0/16
+
+# Kubernetes service IP range
+service_cluster_ip_range: 10.0.0.1/24
+
+# Default admin user and password
+default_admin_user: admin
+default_admin_password: admin
+
+# Access UI external IP Address
+# cluster_access_ip: 0.0.0.0
+
+# Access Proxy node external IP Address
+# proxy_access_ip: 0.0.0.0
+
+# Calico settings
+# calico_ipip_enabled: true
+# calico_tunnel_mtu: 1430
+# calico_ip_autodetection_method: first-found
+
+# Flag to enable ldap with true, disabled by default.
+# ldap_enabled: false
+
+# This flag is to enable the pre-check in appcenter. If enabled, the appcenter
+# will check whether the related image registry can be accessed before install
+# release. If user does not have registry access and intends to install charts
+# using pre-load image on worker, this flag must be set false.
+# appcenter_precheck_enabled: false
+
+# Offline installation
+# offline_pkg_copy_path: /tmp

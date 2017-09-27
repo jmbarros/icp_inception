@@ -5,4 +5,5 @@
   - name: Destroying servers...
     sl_vm:
       state: absent
-      hostname: "{{ inventory_hostname }}"
+      hostname: "{{ item }}"
+    with_lines: cat "to_destroy.txt"

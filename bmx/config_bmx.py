@@ -14,14 +14,27 @@ def ip ( vs ):
     return (output);
 
 ###############
-new_file = "[bluemix] \n"
-with open('/etc/ansible/hosts', 'wb') as file_object :
-           file_object.write(new_file)
-
-with open('./hosts.ansible', 'wb') as file_object :
+with open('/root/klon/hosts', 'wb') as file_object :
            file_object.write("")
 
-with open("./.to_create") as f:
+master01=ip("master01")
+worker01=ip("worker01")
+proxy01=ip("proxy01")
+
+with open("/root/klon/inventory", 'wb') as file_object :
+           file_object.write("[master]")
+with open('/root/klon/inventory', 'a') as file_object :
+           file_object.write(master01)
+with open('/root/klon/inventory', 'a') as file_object :
+           file_object.write("[worker]")
+with open('/root/klon/inventory', 'a') as file_object :
+           file_object.write(worker01)
+with open('/root/klon/inventory', 'a') as file_object :
+           file_object.write("[proxy]")
+with open('/root/klon/inventory', 'a') as file_object :
+           file_object.write(proxy01)
+
+with open("/root/klon/bmx/to_create.txt") as f:
     for line in f:
        vs = (line.rstrip('\n'))	
        ssh = ip (vs)
@@ -30,16 +43,10 @@ with open("./.to_create") as f:
        inventory = ssh.rstrip("\n") + " ansible_user=root ansible_ssh_pass=" + key
        hosts = ssh.rstrip("\n") + " " + vs + "\n"
        print display
-       with open('/etc/ansible/hosts', 'a') as file_object :
+       with open('/root/klon/hosts', 'a') as file_object :
            file_object.write(inventory)
-       with open('./hosts.ansible', 'a') as file_object :
-	   file_object.write(hosts)
 
-play="cat ./hosts.ansible >> /etc/hosts\n" + "ansible-playbook conf_bluemix.yml\n"
-with open('./install_hosts.sh', 'a') as file_object:
-	file_object.write(play)
+
+
 print "... done !"
 print ""
-print "Please, execute the command below to create your hosts on your targets:"
-print "sh ./install_hosts.sh"
-#print "If you want add Bluemix hostnames to this server, execute:"

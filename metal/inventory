@@ -1,0 +1,8 @@
+[master]
+master01 ansible_ssh_host=xxxxx ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass="xxxxx"
+
+[worker]
+worker01 ansible_ssh_host=xxxxx ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass="xxxx"
+
+[proxy]
+proxy01 ansible_ssh_host=xxxxx ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass="xxxx"

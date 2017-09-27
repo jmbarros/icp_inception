@@ -1,0 +1,63 @@
+---
+  - hosts: localhost
+    tasks:
+    - name: Set SELINUX to PERMISIVE Mode
+      selinux:
+        policy: targeted
+        state: permissive
+    - name: Upgrade all packages
+      yum: name='*' state=latest
+
+    - name: Installing Application Requiriments
+      yum: name={{ item }} state=installed
+      with_items:     
+      - epel-release 
+      - libselinux-python
+      - python-pip
+      - python
+      - python-devel
+      - yum-utils 
+      - device-mapper-persistent-data 
+      - lvm2
+
+    - name: Installing PIP
+      command: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+      ignore_errors: True
+
+    - name: Update pip
+      command: pip install --upgrade pip
+      ignore_errors: True
+
+    - name: Installing Docker CE
+      yum: name={{ item }} state=installed
+      with_items:
+      - docker-ce
+
+    - name: Install docker-pip
+      command: pip install docker-py
+      ignore_errors: True
+
+    - name: Starting Docker services and enabling
+      service: name={{ item }} state=restarted enabled=yes
+      with_items:  
+      - docker
+
+    - name: check if ssh key exists 
+      stat: 
+        path="/root/.ssh/id_rsa"
+      register: key
+      delegate_to: localhost
+
+    - name: creating local ssh key
+      command: "ssh-keygen -N '' -f /root/.ssh/id_rsa"
+      when: not key.stat.exists
+      delegate_to: localhost
+
+    - name: setting max map count
+      command: sysctl -w vm.max_map_count=262144
+      ignore_errors: True
+
+    - name: install container locally 
+      docker_image:
+        name: ibmcom/cfc-installer:2.1.0-beta-1
+      delegate_to: localhost

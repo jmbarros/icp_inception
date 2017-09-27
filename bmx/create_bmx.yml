@@ -13,8 +13,8 @@
       dedicated: False
       local_disk: True
       cpus: "2"
-      memory: "8196"
+      memory: "8192"
       disks: "25"
       os_code: "CENTOS_LATEST_64"
       wait: true
-    with_lines: inventory
+    with_lines: cat "./to_create.txt"
