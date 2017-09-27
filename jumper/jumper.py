@@ -15,7 +15,7 @@ def yum_install ( pkg ):
 
 def play_book ( pb ):
    "run playbook"
-   book = "ansible-playbook ./" + pb
+   book = "ansible-playbook " + pb
    os.system(book)
    return;
 
@@ -52,4 +52,4 @@ pip( "--upgrade pip")
 pip( "softlayer" )
 git("https://github.com/jmbarros/klon.git")
 install_galaxy( "jmbarros.icp" )
-play_book( "/root/klon/jumper/jumper.yml")
+play_book( "~/klon/jumper/jumper.yml")
